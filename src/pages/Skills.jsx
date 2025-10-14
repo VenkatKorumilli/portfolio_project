@@ -10,8 +10,8 @@ const skills = [
   { src: '/mongodb-icon.webp', label: 'MongoDB' }
 ];
 
-const Skills = () => (
-  <div className="container" style={{ marginLeft: '250px', padding: '1.5rem 2rem', marginTop: "30px" }}>
+const Skills = ({isMobile}) => (
+  <div className="container" style={isMobile ? {marginLeft:"20px"} : { marginLeft: '250px', padding: '1.5rem 2rem', marginTop: "30px" }}>
     <h2 className="mb-3 fw-bold">My Technical Skills</h2>
     <p className="mb-4 text-muted fs-5">
       I have experience working with modern web technologies spanning frontend and backend development.

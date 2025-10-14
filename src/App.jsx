@@ -1,34 +1,51 @@
-import { Outlet } from "react-router-dom";
-import Skills from "./pages/Skills";
-import About from "./pages/About";
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
 import Project from "./pages/Project";
 import Contact from "./pages/Contact";
 
 function App() {
+  const [isMobile] = useState(window.outerWidth <= 500);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div>
-      <Sidebar />
+      {(!isMobile || isSidebarOpen) && (
+        <Sidebar
+          isMobile={isMobile}
+          setIsSidebarOpen={setIsSidebarOpen}
+        />
+      )}
+
       <div
         id="home"
         style={{
-          marginLeft: "240px",
+          marginLeft: isMobile ? "0" : "250px",
         }}
       >
-        <Home></Home>
+        {isMobile && (
+          <Navbar setIsSidebarOpen={setIsSidebarOpen} />
+        )}
+        <Home isMobile={isMobile} />
       </div>
+
       <div id="about">
-        <About></About>
+        <About isMobile={isMobile} />
       </div>
+
       <div id="skills">
-        <Skills />
+        <Skills isMobile={isMobile} />
       </div>
+
       <div id="projects">
-        <Project />
+        <Project isMobile={isMobile} />
       </div>
+
       <div id="contact">
-        <Contact></Contact>
+        <Contact isMobile={isMobile} />
       </div>
     </div>
   );

@@ -22,8 +22,8 @@ const projects = [
   }
 ];
 
-const Project = () => (
-  <div className="container py-5" style={{ marginLeft: "270px" }}>
+const Project = ({isMobile}) => (
+  <div className="container py-5" style={isMobile ? { padding: '2rem' } : { marginLeft: '270px', padding: '2rem' }}>
     <h2 className="fw-bold mb-5 text-start">My Projects</h2>
     <div className="row g-6">
       {projects.map(({ title, description, techStack, link }, idx) => (

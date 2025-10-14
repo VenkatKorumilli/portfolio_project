@@ -2,13 +2,13 @@ import React from "react";
 import { ReactTyped } from "react-typed";
 
 
-const Home = () => {
+const Home = ({isMobile}) => {
   return (
     <div 
       className="d-flex home-bg justify-content-start align-items-center vh-100 home-section"
       style={{ gap: "2rem"}} 
     >
-      <div style={{marginLeft:"35px"}}>
+      <div style={isMobile ?{} : {marginLeft:"35px"}}>
         <div className="fs-1 text-white fw-bold">I'm Venkat</div>
         <div className="text-white">
           <h1>

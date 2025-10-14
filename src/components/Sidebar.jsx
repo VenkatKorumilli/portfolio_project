@@ -1,24 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ isMobile, setIsSidebarOpen }) => {
   const [active, setActive] = useState("home");
-  const [isMobile, setIsmobile] = useState();
-    
-  useEffect(() => {
-    if (window.outerWidth <= 500) {
-      setIsmobile(true);
-    } else {
-      setIsmobile(false);
-    }
-  }, [window]);
-
-  function close(){
-  
-  }
 
   return (
     <div
-      className="sidebar d-flex flex-column justify-content-start align-items-start vh-100 p-3"
+      className="sidebar d-flex flex-column justify-content-start align-items-start vh-100 p-3 text-light"
       style={{
         position: "fixed",
         left: 0,
@@ -26,67 +13,44 @@ const Sidebar = () => {
         width: "250px",
         zIndex: 1040,
       }}
-    >    
-      <div className="d-flex gap-5 ">
-      <div className="fw-bold fs-3 navbar-brand mb-4 text-light">
+    >
+      <div className="d-flex justify-content-between w-100 align-items-center mb-4">
+        <div className="fw-bold fs-3 navbar-brand text-light">
           My <span className="sidebar-name text-light">Portfolio</span>
         </div>
-        <div>
-        {
-        isMobile ? <i className="bi bi-x fs-1 text-light" onClick={()=>{close()}}></i> : ""
-        }
-        </div>
+        {isMobile && (
+          <i
+            className="bi bi-x fs-1 text-light"
+            style={{ cursor: "pointer" }}
+            onClick={() => setIsSidebarOpen(false)} // close sidebar
+          ></i>
+        )}
       </div>
-      <hr style={{ borderTop: '1px solid #f8f9fa' }} />
 
-      <a
-        href="#home"
-        className={`sidebar-btn mb-3 text-decoration-none fs-5  ${
-          active === "home" ? " active" : ""
-        }`}
-        onClick={() => setActive("home")}
-      >
-        <span className="ms-1">Home</span>
-      </a>
-      <a
-        href="#about"
-        className={`sidebar-btn mb-3 text-decoration-none fs-5${
-          active === "about" ? " active" : ""
-        }`}
-        onClick={() => setActive("about")}
-      >
-        <span className="ms-1">About</span>
-      </a>
-      <a
-        href="#skills"
-        className={`sidebar-btn mb-3 text-decoration-none fs-5${
-          active === "skills" ? " active" : ""
-        }`}
-        onClick={() => setActive("skills")}
-      >
-        <span className="ms-1">Skills</span>
-      </a>
-      <a
-        href="#projects"
-        className={`sidebar-btn mb-3 text-decoration-none fs-5${
-          active === "projects" ? " active" : ""
-        }`}
-        onClick={() => setActive("projects")}
-      >
-        <span className="ms-1">Projects</span>
-      </a>
-      <a
-        href="#contact"
-        className={`sidebar-btn text-decoration-none fs-5${
-          active === "contact" ? " active" : ""
-        }`}
-        onClick={() => setActive("contact")}
-      >
-        <span className="ms-1">Contact</span>
-      </a>
+      <hr style={{ borderTop: "1px solid #f8f9fa", width: "100%" }} />
+
+      {[
+        "home",
+        "about",
+        "skills",
+        "projects",
+        "contact"
+      ].map((item) => (
+        <a
+          key={item}
+          href={`#${item}`}
+          className={`sidebar-btn mb-3 text-decoration-none fs-5 text-light ${
+            active === item ? "active" : ""
+          }`}
+          onClick={() => {
+            setActive(item);
+            if (isMobile) setIsSidebarOpen(false); // auto-close on mobile nav
+          }}
+        >
+          <span className="ms-1 text-capitalize">{item}</span>
+        </a>
+      ))}
     </div>
-    
-
   );
 };
 
