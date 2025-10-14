@@ -1,0 +1,75 @@
+body {
+  overflow-x: hidden;
+}
+
+.frontpage-bg {
+  background-color: rgb(238, 213, 238);
+}
+.sidebar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+  background-color: #232f3e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  overflow: auto;
+  z-index: 1040;
+}
+
+.sidebar-name {
+  color: rgb(195, 8, 195);
+}
+
+
+.sidebar-btn {
+  color: #3a68b8;
+  font-weight: bold;
+}
+.sidebar-btn:hover {
+  color: #5a82d6;
+}
+
+.sidebar-btn.active {
+  background-color: #9345cb;
+  color: white !important;
+  width: 100%;
+}
+
+.project-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+section {
+  scroll-margin-top: 80px;
+}
+.home-section {
+  background-image: url("https://www.mbloging.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fyynr1uml%2Fproduction%2Fd3f0ff2ab5398aaffb00fa0b3afcb238772f42e7-1024x576.jpg%3Fw%3D1024%26auto%3Dformat&w=3840&q=75");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+
+.main-content {
+  margin-left: 240px; /* space for sidebar */
+  width: calc(100% - 240px);
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  }
+}
+/* Optional: show sidebar always on desktop */
+@media (min-width: 768px) {
+  .sidebar {
+    transform: none !important;
+    left: 0;
+  }
+}
