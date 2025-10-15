@@ -24,7 +24,7 @@ const Contact = ({ isMobile }) => (
               <strong>Connect:</strong>
               <div className="mt-2 d-flex align-items-center">
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/venkat-korumilli-a403b9286/"
                   className="me-3 text-primary"
                   target="_blank"
                   rel="noreferrer"
@@ -32,7 +32,7 @@ const Contact = ({ isMobile }) => (
                   <i className="bi bi-linkedin fs-3"></i>
                 </a>
                 <a
-                  href="https://github.com/yourprofile"
+                  href="https://github.com/VenkatKorumilli"
                   className="me-3 text-dark"
                   target="_blank"
                   rel="noreferrer"
@@ -40,7 +40,7 @@ const Contact = ({ isMobile }) => (
                   <i className="bi bi-github fs-3"></i>
                 </a>
                 <a
-                  href="https://twitter.com/yourprofile"
+                  href=""
                   className="text-info"
                   target="_blank"
                   rel="noreferrer"
