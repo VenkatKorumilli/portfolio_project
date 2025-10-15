@@ -5,7 +5,7 @@ const Navbar = ({ setIsSidebarOpen }) => {
     <nav
       className="navbar navbar-expand-lg fixed-top"
       style={{
-        backgroundColor: '#232f3e', 
+        backgroundColor: '#3d6491ff', 
         padding: '10px 20px',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
         zIndex: 1030, 
