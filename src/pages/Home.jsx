@@ -10,7 +10,7 @@ const Home = ({ isMobile }) => {
     >
       <div style={isMobile ? { marginLeft: "15px", marginTop: "15px" } : { marginLeft: "35px" }}>
         <div className={isMobile ? "fs-3 fw-bold text-white" : "fs-1 fw-bold text-white"}>I'm Venkat</div>
-        <div className="text-white">
+        <div className="text-white fs-1">
           <h1 style={{ fontSize: isMobile ? "1.5rem" : "inherit" }}>
             I'm a{" "}
             <ReactTyped
