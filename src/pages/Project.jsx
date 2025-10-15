@@ -23,13 +23,12 @@ const projects = [
 ];
 
 const Project = ({isMobile}) => (
-  <div className="container py-5" style={isMobile ? { padding: '2rem' } : { marginLeft: '270px', padding: '2rem' }}>
+  <div className="container py-5" style={isMobile ? { padding:"2rem"} : { marginLeft: '270px', padding: '2rem' }}>
     <h2 className="fw-bold mb-5 text-start">My Projects</h2>
     <div className="row g-6">
       {projects.map(({ title, description, techStack, link }, idx) => (
-        <div className="col-12 col-md-6 col-lg-3" key={idx}>
-          <div className="card h-100 shadow-sm border-0 rounded-4 project-card">
-          
+        <div className="col-12 col-md-6 col-lg-3 project" key={idx}>
+          <div className="card h-100 shadow-sm border-1 rounded-3 project-card">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title fw-bold">{title}</h5>
               <p className="card-text text-secondary">{description}</p>

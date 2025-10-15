@@ -2,16 +2,16 @@ import React from "react";
 import { ReactTyped } from "react-typed";
 
 
-const Home = ({isMobile}) => {
+const Home = ({ isMobile }) => {
   return (
-    <div 
+    <div
       className="d-flex home-bg justify-content-start align-items-center vh-100 home-section"
-      style={{ gap: "2rem"}} 
+      style={{ gap: isMobile ? "1rem" : "2rem", padding: isMobile ? "10px" : "0" }}
     >
-      <div style={isMobile ?{} : {marginLeft:"35px"}}>
-        <div className="fs-1 text-white fw-bold">I'm Venkat</div>
+      <div style={isMobile ? { marginLeft: "15px", marginTop: "15px" } : { marginLeft: "35px" }}>
+        <div className={isMobile ? "fs-3 fw-bold text-white" : "fs-1 fw-bold text-white"}>I'm Venkat</div>
         <div className="text-white">
-          <h1>
+          <h1 style={{ fontSize: isMobile ? "1.5rem" : "inherit" }}>
             I'm a{" "}
             <ReactTyped
               strings={["Frontend Developer", "Backend Developer", "Full-stack Developer"]}

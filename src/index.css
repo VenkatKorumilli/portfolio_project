@@ -48,6 +48,7 @@ section {
   scroll-margin-top: 80px;
 }
 .home-section {
+  position: relative;
   background-image: url("https://www.mbloging.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fyynr1uml%2Fproduction%2Fd3f0ff2ab5398aaffb00fa0b3afcb238772f42e7-1024x576.jpg%3Fw%3D1024%26auto%3Dformat&w=3840&q=75");
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,6 +56,48 @@ section {
   width: 100%;
 }
 
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+  z-index: 1;
+}
+
+.home-section > div {
+  position: relative;
+  z-index: 2; /* Make sure content is above overlay */
+}
+
+
+@media (max-width: 768px) {
+  .home-section {
+    background-position: top center;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 10px !important; /* Less padding on mobile */
+  }
+  .navbar-brand {
+    font-size: 20px !important; /* Smaller brand font on mobile */
+  }
+  .navbar-toggler {
+    padding: 5px 10px !important; 
+  }
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px; 
+  }
+  .project{
+  margin-bottom: 20px;
+  }
+}
 
 .main-content {
   margin-left: 240px; /* space for sidebar */

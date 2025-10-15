@@ -5,7 +5,7 @@ const Contact = ({ isMobile }) => (
     className="container"
     style={{
       marginLeft: isMobile ? "0" : "270px",
-      padding: isMobile ? "20px 10px" : "40px 30px",
+      padding: isMobile ? "2rem" : "40px 30px",
       minHeight: "100vh",
       maxWidth: "1000px",
     }}
@@ -15,7 +15,7 @@ const Contact = ({ isMobile }) => (
     <div className="row g-4">
       {/* Profile Card */}
       <div className="col-12 col-md-5">
-        <div className="card h-100 shadow-sm border-0 rounded-4 p-3">
+        <div className="card h-100 shadow-sm border-1 rounded-3 p-3">
           <div className="card-body d-flex flex-column justify-content-center">
             <h5 className="card-title fw-bold mb-3">Venkat</h5>
             <p className="mb-2"><strong>Phone: </strong>+91-9908166547</p>
@@ -55,7 +55,7 @@ const Contact = ({ isMobile }) => (
 
       {/* Contact Form */}
       <div className="col-12 col-md-7">
-        <div className="card h-100 shadow-sm border-0 rounded-4 p-3">
+        <div className="card h-100 shadow-sm border-1 rounded-3 p-3">
           <div className="card-body">
             <h5 className="card-title mb-3 fw-bold">Contact Form</h5>
             <form>
